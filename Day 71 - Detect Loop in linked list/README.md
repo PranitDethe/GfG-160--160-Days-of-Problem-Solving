@@ -1,0 +1,55 @@
+# Detect Loop in Linked List
+
+## Problem Description
+You are given the head of a singly linked list. Your task is to determine if the linked list contains a loop.  
+A loop exists in a linked list if the `next` pointer of the last node points to any other node in the list (including itself), rather than being `null`.
+
+### Custom Input Format
+- A head of a singly linked list.
+- A position (`pos`) that denotes the **1-based index** of the node to which the last node points.  
+  - If `pos = 0`, it means the last node points to `null`, indicating there is no loop.
+
+---
+
+## Examples
+
+### Example 1
+**Input:**  
+`head = 1 -> 3 -> 4, pos = 2`  
+
+**Output:**  
+`true`  
+
+**Explanation:**  
+There exists a loop as the last node is connected back to the second node.
+
+---
+
+### Example 2
+**Input:**  
+`head = 1 -> 8 -> 3 -> 4, pos = 0`  
+
+**Output:**  
+`false`  
+
+**Explanation:**  
+There exists no loop in the given linked list.
+
+---
+
+### Example 3
+**Input:**  
+`head = 1 -> 2 -> 3 -> 4, pos = 1`  
+
+**Output:**  
+`true`  
+
+**Explanation:**  
+There exists a loop as the last node is connected back to the first node.
+
+---
+
+## Constraints
+- `1 ≤ number of nodes ≤ 10⁴`  
+- `1 ≤ node->data ≤ 10³`  
+- `0 ≤ pos ≤ Number of nodes in the Linked List`
