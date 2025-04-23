@@ -1,0 +1,25 @@
+class Solution {
+    public int[] singleNum(int[] arr) {
+        // Code here
+        int xor = 0;
+        
+        for (int num : arr) {
+            xor ^= num;
+        }
+        
+        int rightmostSetBit = xor & -xor;
+        
+        int num1 = 0, num2 = 0;
+        
+        for (int num : arr) {
+            if ((num & rightmostSetBit) != 0) {
+                num1 ^= num;
+            } else {
+                num2 ^= num;
+            }
+        }
+        int[] result = new int[]{num1, num2};
+        Arrays.sort(result);
+        return result;
+    } 
+}
